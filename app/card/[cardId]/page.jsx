@@ -6,7 +6,7 @@ import Link from "next/link";
 function EditForm({params}){
     // const router = useRouter() 
     const [post,setPost] = useState(null)
-    useEffect(()=>{
+    useEffect((params=params)=>{
         async function getPost(id){
             const response = await fetch(`http://localhost:3000/api/posts/?id=${id}`,{method:"get",mode:"cors"})
             console.log(response)
